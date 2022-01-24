@@ -9,7 +9,7 @@ public class TerrainGeneration : MonoBehaviour
     public TileBase groundTile;
     public Tilemap roadTM;
     [SerializeField] private int[,] road;
-    public int width,height,roadIndex,groundIndex;
+    public int width, height;
     public BoundsInt building2x2, building4x4;
 
     #region Unity Functions
@@ -21,14 +21,14 @@ public class TerrainGeneration : MonoBehaviour
 
     void Start()
     {
-        road = BordersArray(width,height,roadIndex); // strada pe margini
-        RenderBorders(road,roadIndex, roadTM, roadTile); // strada
-        road = GenerateGroundArray(width,height,groundIndex);
+        road = BordersArray(width,height); // strada pe margini
+        RenderBorders(road,roadTM, roadTile); // strada
+        road = GenerateGroundArray(width,height);
         SetTileOnBounds(road, roadTM);
-        
     }
     #endregion
-    public int[,] BordersArray(int width,int height,int index)
+
+    public int[,] BordersArray(int width,int height)
     {
         int[,] map = new int[width, height];
         for(int x=0;x<width;x++)
@@ -37,37 +37,51 @@ public class TerrainGeneration : MonoBehaviour
             {
                 if (y == 0 ||x==0 || y==height-1|| x==width-1)
                 {
-                    map[x, y] = index;
+                    map[x, y] = 1;
                 }
             }
         }
         return map;
     }
 
-    public void RenderBorders(int[,] map,int index, Tilemap groundTilemap,TileBase groundTileBase)
+    public void RenderBorders(int[,] map,Tilemap groundTilemap,TileBase groundTileBase)
     {
         for(int x=0;x<width;x++)
         {
             for(int y=0;y<height;y++)
             {
-                if (map[x, y] == index)
+                if (map[x, y] == 1)
                     groundTilemap.SetTile(new Vector3Int(x, y, 0), groundTileBase);
             }
         }
     }
 
-    public int[,] GenerateGroundArray(int width,int height, int index)
+    public int[,] GenerateGroundArray(int width,int height)
     {
         int[,] map = new int[width - 1, height - 1];
-        for(int x=1;x<width-1;x++)
+        for(int x=1;x<width-1;x+=3)
         {
-            for(int y=1;y<height-1;y++)
+            for(int y=1;y<height-1;y+=3)
             {
-                map[x, y] = index; 
+                GenBounds(map,x,y);
+                
             }
         }
         return map;
     }
+
+    public void GenBounds(int[,] map,int xMin,int yMin )
+    {
+        for(int x=xMin;x<=xMin+1;x++)
+        {
+            for(int y = yMin; y <= yMin + 1; y++)
+            {
+                map[x, y] = 2;
+            }
+        }
+    }
+
+   
 
     public void SetTileOnBounds(int[,] map,Tilemap tm)
     {
@@ -79,10 +93,16 @@ public class TerrainGeneration : MonoBehaviour
                 {
                     tm.SetTile(new Vector3Int(x, y, 0), groundTile);
                 }
-                
+                if(map[x,y]==1)
+                {
+                    tm.SetTile(new Vector3Int(x, y, 0), roadTile);
+                }
             }
         }
         
     }
+
+    
+    
 }
  

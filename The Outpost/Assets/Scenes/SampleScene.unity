@@ -397,10 +397,8 @@ MonoBehaviour:
   roadTile: {fileID: 11400000, guid: 4901ffedb52680a44be3eb9d6d291da2, type: 2}
   groundTile: {fileID: 11400000, guid: 4b9a4a11bdc145848af3874cce4b23ef, type: 2}
   roadTM: {fileID: 611399148}
-  width: 24
-  height: 24
-  roadIndex: 1
-  groundIndex: 2
+  width: 25
+  height: 25
   building2x2:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 2, y: 2, z: 0}
