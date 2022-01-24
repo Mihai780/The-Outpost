@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 public class TerrainGen : MonoBehaviour
 {
     public int width, height;
+    public BoundsInt intBounds;
     public Tilemap tm;
     public IsometricRuleTile roadTile;
     public TileBase groundTile;
@@ -22,8 +23,9 @@ public class TerrainGen : MonoBehaviour
 
     void GenerateWorld()
     {
+        
         SetBorders(); // strazile de pe margini
-      //  SetGround();
+        SetGround();
     }
 
     void SetBorders()
@@ -42,7 +44,8 @@ public class TerrainGen : MonoBehaviour
 
     void SetGround()
     {
-        foreach(var tile in tm.cellBounds.allPositionsWithin)
+        tm.ResizeBounds();
+        foreach(var tile in intBounds.allPositionsWithin)
         {
             tm.SetTile(tile, tileClasses[TileModes.Ground]);
         }
