@@ -21,13 +21,19 @@ public class TerrainGeneration : MonoBehaviour
 
     void Start()
     {
+        #region incercare 1
         road = BordersArray(width,height); // strada pe margini
         RenderBorders(road,roadTM, roadTile); // strada
         road = GenerateGroundArray(width,height);
         SetTileOnBounds(road, roadTM);
+        #endregion
+
+
+
     }
     #endregion
 
+#region incercare1
     public int[,] BordersArray(int width,int height)
     {
         int[,] map = new int[width, height];
@@ -72,16 +78,32 @@ public class TerrainGeneration : MonoBehaviour
 
     public void GenBounds(int[,] map,int xMin,int yMin )
     {
-        for(int x=xMin;x<=xMin+1;x++)
+        for(int x=xMin;x<=xMin;x++)
         {
-            for(int y = yMin; y <= yMin + 1; y++)
+            for(int y = yMin; y <= yMin; y++)
             {
-                map[x, y] = 2;
+               /* if(x==xMin+1)
+                {
+                    map[x, y] = 2;
+                    map[x + 1, y] = 1;
+                }
+                else if(y==yMin+1)
+                {
+                    map[x, y] = 2;
+                    map[x , y+1] = 1;
+                }
+                else if(y==yMin && x==xMin)
+                {
+                    map[x, y] = 2;
+                    map[x+1, y + 1] = 1;
+                }
+                else
+                {*/
+                    map[x, y] = 2;
+               // }
             }
         }
     }
-
-   
 
     public void SetTileOnBounds(int[,] map,Tilemap tm)
     {
@@ -101,8 +123,10 @@ public class TerrainGeneration : MonoBehaviour
         }
         
     }
+    #endregion
 
-    
-    
+
+
+
 }
- 
+
