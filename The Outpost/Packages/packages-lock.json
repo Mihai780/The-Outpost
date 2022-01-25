@@ -72,7 +72,7 @@
       "dependencies": {}
     },
     "com.unity.2d.tilemap.extras": {
-      "version": "file:C:/Users/cCc/Downloads/2d-extras-1.5.0-preview/2d-extras-1.5.0-preview",
+      "version": "file:C:/2d-extras-1.5.0-preview",
       "depth": 0,
       "source": "local",
       "dependencies": {
