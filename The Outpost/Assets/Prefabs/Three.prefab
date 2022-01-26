@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2157250525485651314}
   - component: {fileID: 8804971930550801792}
+  - component: {fileID: 5701138305321649347}
   m_Layer: 0
   m_Name: Three
   m_TagString: Untagged
@@ -81,3 +82,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5701138305321649347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361432669201973224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f38a9e9cdb5e04844a7afc997cd14db7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  foodChance: 0
+  ammoChance: 0
+  medicineChance: 0
+  survivorChance: 0
+  spriteRend: {fileID: 0}
+  buildingName: 

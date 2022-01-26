@@ -27,5 +27,3 @@ public class buildingSpawner : MonoBehaviour
 
     
 }
-
-public enum SmallBuildings {SmallFarm,Marketplace,Church,Library,Laboratory}

@@ -6,6 +6,7 @@ public class BuildingDataSO : ScriptableObject
 {
     public int id;
     public string buildingName;
+    public SpriteRenderer sprite;
     public int survivorChance;
     public int medicineChance;
     public int ammoChance;
