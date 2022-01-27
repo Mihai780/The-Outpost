@@ -29,7 +29,7 @@ public class SmallBuildingGeneration : MonoBehaviour
                     ammoChance = BuildingDataLists.instance.smallBuildings[i].ammoChance;
                     survivorChance = BuildingDataLists.instance.smallBuildings[i].survivorChance;
                     medicineChance = BuildingDataLists.instance.smallBuildings[i].medicineChance;
-                    spriteRend.sprite = BuildingDataLists.instance.smallBuildings[i].sprite.sprite;
+                    spriteRend.sprite = BuildingDataLists.instance.smallBuildings[i].sprite;
                     buildingName = BuildingDataLists.instance.smallBuildings[i].buildingName;
                 }
             } 

@@ -15,6 +15,7 @@ public class BigBuildingGeneration : MonoBehaviour
     void Start()
     {
         id = Random.Range(0, 3);
+        
         GetInfoOnID();
     }
 
@@ -29,7 +30,7 @@ public class BigBuildingGeneration : MonoBehaviour
                 ammoChance = BuildingDataLists.instance.bigBuildings[i].ammoChance;
                 survivorChance = BuildingDataLists.instance.bigBuildings[i].survivorChance;
                 medicineChance = BuildingDataLists.instance.bigBuildings[i].medicineChance;
-                spriteRend.sprite = BuildingDataLists.instance.bigBuildings[i].sprite.sprite;
+                spriteRend.sprite = BuildingDataLists.instance.bigBuildings[i].sprite;
                 buildingName = BuildingDataLists.instance.bigBuildings[i].buildingName;
             }
         }
