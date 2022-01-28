@@ -11,7 +11,7 @@ public class SupplyShow : MonoBehaviour
     private TMP_Text text;
 
     public int currSupply;
-    private int maxSupply=100;
+    public int maxSupply=100;
 
     private void Start()
     {

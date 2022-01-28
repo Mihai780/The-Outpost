@@ -60,8 +60,9 @@ public class CanvasSlide : MonoBehaviour
     public void ChangeTime()
     {
         seconds = (int)(Time.time % 60);
-        minutes = (int)(Time.time / 60);
-        timer.text = minutes.ToString("00") + ":" + seconds.ToString("00");
+        minutes = (int)(Time.time / 60 % 24);
+        
+        timer.text = minutes.ToString("00")+":00";
     }
 
     #endregion
