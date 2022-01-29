@@ -14,6 +14,7 @@ public class SmallBuildingGeneration : MonoBehaviour
 
     void Start()
     {
+        spriteRend = GetComponent<SpriteRenderer>();
         id = Random.Range(0,5);
         GetInfoOnID();
     }

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   buildingName: Laboratory
+  sprite: {fileID: 21300000, guid: 23e96f2b60a80f64581231389c7344dd, type: 3}
   survivorChance: 40
   medicineChance: 80
   ammoChance: 20
