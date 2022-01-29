@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Church
   m_EditorClassIdentifier: 
   id: 2
-  buildingName: Church
-  sprite: {fileID: 21300000, guid: 33244e9316c3d7f4eb9c8aa11bb01326, type: 3}
-  survivorChance: 100
-  medicineChance: 100
-  ammoChance: 100
-  foodChance: 100
+  buildingName: Graveyard
+  sprite: {fileID: 21300000, guid: def8e777012a58143a07c40387a7e985, type: 3}
+  survivorChance: 0
+  medicineChance: 0
+  ammoChance: 0
+  foodChance: 0
