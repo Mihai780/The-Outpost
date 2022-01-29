@@ -22,7 +22,7 @@ public class SmallBuildingGeneration : MonoBehaviour
     public  void GetInfoOnID()
     {
         
-            for(int i=0;i<=BuildingDataLists.instance.smallBuildings.Count;i++)
+            for(int i=0;i<BuildingDataLists.instance.smallBuildings.Count;i++)
             {
                 if (id == BuildingDataLists.instance.smallBuildings[i].id)
                 {

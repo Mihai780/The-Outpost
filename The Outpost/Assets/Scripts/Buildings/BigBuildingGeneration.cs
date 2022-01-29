@@ -14,6 +14,7 @@ public class BigBuildingGeneration : MonoBehaviour
 
     void Start()
     {
+        spriteRend = GetComponent<SpriteRenderer>();
         id = Random.Range(0, 3);
         
         GetInfoOnID();
@@ -22,7 +23,7 @@ public class BigBuildingGeneration : MonoBehaviour
     public void GetInfoOnID()
     {
 
-        for (int i = 0; i <= BuildingDataLists.instance.bigBuildings.Count; i++)
+        for (int i = 0; i < BuildingDataLists.instance.bigBuildings.Count; i++)
         {
             if (id == BuildingDataLists.instance.bigBuildings[i].id)
             {
