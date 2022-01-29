@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Marketplace
   m_EditorClassIdentifier: 
   id: 1
-  buildingName: Marketplace
-  sprite: {fileID: 21300000, guid: 33244e9316c3d7f4eb9c8aa11bb01326, type: 3}
-  survivorChance: 70
-  medicineChance: 70
-  ammoChance: 10
+  buildingName: Pizzeria
+  sprite: {fileID: 21300000, guid: a7d2679461447e24493b52c35a794f4d, type: 3}
+  survivorChance: 0
+  medicineChance: 10
+  ammoChance: 100
   foodChance: 90
