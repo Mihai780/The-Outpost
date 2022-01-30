@@ -9,6 +9,7 @@ public class MovingOnMousePos : MonoBehaviour
     Transform thisTransform;
     Vector2 mousePos;
      public float zoom;
+    public float minValue;
     public CinemachineVirtualCamera virtualCamera;
 
     private void Start()
@@ -20,7 +21,7 @@ public class MovingOnMousePos : MonoBehaviour
     void Update()
     {
         
-        zoom =Mathf.Clamp(zoom, 3, 10);
+        zoom =Mathf.Clamp(zoom, minValue, 10);
         zoom -= Input.mouseScrollDelta.y * 0.2f;
 
         virtualCamera.m_Lens.OrthographicSize = zoom;
