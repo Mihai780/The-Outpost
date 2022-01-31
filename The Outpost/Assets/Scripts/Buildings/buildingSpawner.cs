@@ -10,10 +10,17 @@ public class buildingSpawner : MonoBehaviour
     public GameObject buildingOne, buildingThree;
     public Transform parentOne, parentThree;
 
+    public static buildingSpawner instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
         SpawnBuildings();
         GenerateBase();
+
 
     }
 
@@ -27,6 +34,22 @@ public class buildingSpawner : MonoBehaviour
             {
                 nr++;
                 baseTM.SetTile(tile,base1);
+                if(tm.HasTile(new Vector3Int(tile.x+2,tile.y,0)))
+                {
+                    baseTM.SetTile(new Vector3Int(tile.x + 2, tile.y, 0), base1);
+                }
+                if (tm.HasTile(new Vector3Int(tile.x, tile.y+2, 0)))
+                {
+                    baseTM.SetTile(new Vector3Int(tile.x, tile.y+2, 0), base1);
+                }
+                if (tm.HasTile(new Vector3Int(tile.x, tile.y - 2, 0)))
+                {
+                    baseTM.SetTile(new Vector3Int(tile.x, tile.y - 2, 0), base1);
+                }
+                if (tm.HasTile(new Vector3Int(tile.x-2, tile.y, 0)))
+                {
+                    baseTM.SetTile(new Vector3Int(tile.x-2, tile.y , 0), base1);
+                }
                 break;
             }
         }
