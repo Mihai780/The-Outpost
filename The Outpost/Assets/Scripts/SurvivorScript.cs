@@ -37,17 +37,20 @@ public class SurvivorScript : MonoBehaviour
 
     private void OnMouseUp()
     {
+        //movement
         if(mainTM.GetTile(mousePosInt) == buildingSpawner.instance.base1
             || mainTM.GetTile(mousePosInt) == buildingSpawner.instance.one
             || mainTM.GetTile(mousePosInt) == buildingSpawner.instance.three)
         {
             transform.position = mainTM.GetCellCenterLocal(mousePosInt);
-            Debug.Log("set");
         }
         else
         {
             transform.position = prevPos;
         }
+
+        //deschide meniurile
+
         
     }
 
