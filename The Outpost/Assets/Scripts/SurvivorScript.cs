@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class SurvivorScript : MonoBehaviour
 {
@@ -11,10 +12,12 @@ public class SurvivorScript : MonoBehaviour
     Vector3 prevPos;
     Vector3Int mousePosInt;
     public Tilemap mainTM;
+    Animator animator;
+    GameObject currReferenceObject;
 
     void Start()
     {
-        
+        animator = GetComponentInChildren<Animator>();
     }
 
     
@@ -42,16 +45,24 @@ public class SurvivorScript : MonoBehaviour
             || mainTM.GetTile(mousePosInt) == buildingSpawner.instance.one
             || mainTM.GetTile(mousePosInt) == buildingSpawner.instance.three)
         {
+            //deschide meniurile
+            animator.SetBool("Show", true);
+
             transform.position = mainTM.GetCellCenterLocal(mousePosInt);
+            this.GetComponent<CircleCollider2D>().enabled = false;
+            currReferenceObject = Physics2D.CircleCast(mousePos, 0.1f, mousePos).collider.gameObject;
+
+            this.GetComponent<CircleCollider2D>().enabled = true;
         }
         else
         {
             transform.position = prevPos;
+
+            //inchide meniul
+            animator.SetBool("Show", false);
         }
-
-        //deschide meniurile
-
-        
     }
+
+
 
 }
