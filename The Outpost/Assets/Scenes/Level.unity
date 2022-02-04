@@ -1573,6 +1573,21 @@ PrefabInstance:
       propertyPath: mainTM
       value: 
       objectReference: {fileID: 1741610554}
+    - target: {fileID: 2775142912737420328, guid: 949dd379050d6554e81d8b314ece928a,
+        type: 3}
+      propertyPath: circularSlider
+      value: 
+      objectReference: {fileID: 754496301}
+    - target: {fileID: 2775142912737420328, guid: 949dd379050d6554e81d8b314ece928a,
+        type: 3}
+      propertyPath: circularSliderGO
+      value: 
+      objectReference: {fileID: 1636250405}
+    - target: {fileID: 2794174891121960802, guid: 949dd379050d6554e81d8b314ece928a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4887091453730538951, guid: 949dd379050d6554e81d8b314ece928a,
         type: 3}
       propertyPath: m_IsActive
@@ -1734,6 +1749,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717635869}
   m_CullTransparentMesh: 0
+--- !u!114 &754496301 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1907391499456415202, guid: 949dd379050d6554e81d8b314ece928a,
+    type: 3}
+  m_PrefabInstance: {fileID: 707844360}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &825746651
 GameObject:
   m_ObjectHideFlags: 0
@@ -2985,6 +3012,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1636250405 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2794174891121960802, guid: 949dd379050d6554e81d8b314ece928a,
+    type: 3}
+  m_PrefabInstance: {fileID: 707844360}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1706882477
 GameObject:
   m_ObjectHideFlags: 0

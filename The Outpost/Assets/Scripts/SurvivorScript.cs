@@ -14,8 +14,11 @@ public class SurvivorScript : MonoBehaviour
     public Tilemap mainTM;
     Animator animator;
     GameObject currReferenceObject;
-    [SerializeField] private GameObject circularSlider;
+    [SerializeField] private Image circularSlider;
+    [SerializeField] private GameObject circularSliderGO;
     float time;
+    
+    int repetari = 0;
 
     void Start()
     {
@@ -75,20 +78,34 @@ public class SurvivorScript : MonoBehaviour
         //inchide meniul
         animator.SetBool("Show", false);
 
-        //deschide slider
-        circularSlider.SetActive(true);
+        //deschide sliderGO
+        circularSliderGO.SetActive(true);
 
         //set time to work
         time = currReferenceObject.GetComponent<SmallBuildingGeneration>().timeToWork - 2 * (1+data.scavangeingLevel);
 
         //start the work
         StartCoroutine(Working(time));
+        
     }
 
     IEnumerator Working(float time)
     {
+        repetari++;
         yield return new WaitForSeconds(time);
-        Debug.Log("Done");
+        if(repetari<=time)
+        {
+            Debug.Log("Repetare"+repetari);
+            circularSlider.fillAmount = (float)(repetari / (time + 1));
+            StartCoroutine(Working(time));
+        } 
+        else
+        {
+            circularSlider.fillAmount = 1f;
+            repetari = 0;
+            Debug.Log("Done");
+        }
+        
     }
     #endregion
 
