@@ -19,3 +19,4 @@ MonoBehaviour:
   medicineChance: 40
   ammoChance: 10
   foodChance: 30
+  timeToWork: 10

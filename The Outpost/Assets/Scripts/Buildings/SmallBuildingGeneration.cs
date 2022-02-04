@@ -11,6 +11,7 @@ public class SmallBuildingGeneration : MonoBehaviour
     [SerializeField] private int survivorChance;
     [SerializeField] private SpriteRenderer spriteRend;
     [HideInInspector] public string buildingName;
+    public float timeToWork;
 
     void Start()
     {
@@ -32,6 +33,7 @@ public class SmallBuildingGeneration : MonoBehaviour
                     medicineChance = BuildingDataLists.instance.smallBuildings[i].medicineChance;
                     spriteRend.sprite = BuildingDataLists.instance.smallBuildings[i].sprite;
                     buildingName = BuildingDataLists.instance.smallBuildings[i].buildingName;
+                    timeToWork = BuildingDataLists.instance.smallBuildings[i].timeToWork;
                 }
             } 
     }

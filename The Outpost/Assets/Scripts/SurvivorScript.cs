@@ -14,12 +14,13 @@ public class SurvivorScript : MonoBehaviour
     public Tilemap mainTM;
     Animator animator;
     GameObject currReferenceObject;
+    [SerializeField] private GameObject circularSlider;
+    float time;
 
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
     }
-
     
     void Update()
     {
@@ -28,9 +29,13 @@ public class SurvivorScript : MonoBehaviour
         
     }
 
+    #region Mouse Events
     private void OnMouseDown()
     {
         prevPos = transform.position;
+
+        //inchide meniul
+        animator.SetBool("Show", false);
     }
 
     public void OnMouseDrag()
@@ -62,7 +67,30 @@ public class SurvivorScript : MonoBehaviour
             animator.SetBool("Show", false);
         }
     }
+    #endregion
 
+    #region Buttons
+    public void ScavangeButton()
+    {   
+        //inchide meniul
+        animator.SetBool("Show", false);
+
+        //deschide slider
+        circularSlider.SetActive(true);
+
+        //set time to work
+        time = currReferenceObject.GetComponent<SmallBuildingGeneration>().timeToWork - 2 * (1+data.scavangeingLevel);
+
+        //start the work
+        StartCoroutine(Working(time));
+    }
+
+    IEnumerator Working(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Debug.Log("Done");
+    }
+    #endregion
 
 
 }

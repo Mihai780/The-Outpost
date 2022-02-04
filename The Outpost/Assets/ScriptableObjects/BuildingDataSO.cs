@@ -11,5 +11,6 @@ public class BuildingDataSO : ScriptableObject
     public int medicineChance;
     public int ammoChance;
     public int foodChance;
+    public float timeToWork;
 
 }
