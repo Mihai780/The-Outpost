@@ -6,7 +6,9 @@ public class SurvivorDataSO : ScriptableObject
 {
     public int buildingLevel;
     public int scavangeingLevel;
-    public int soldierLevel;
-    public int engineerLevel;
+    public int strenghtLevel;
+    public int researchLevel;
     public int leaderLevel;
+    public int enduranceLevel;
+    public int speedLevel;
 }

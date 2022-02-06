@@ -17,12 +17,13 @@ public class SurvivorScript : MonoBehaviour
     [SerializeField] private Image circularSlider;
     [SerializeField] private GameObject circularSliderGO;
     float time;
-    
     int repetari = 0;
+
 
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
+        Firefighter ff = new Firefighter();
     }
     
     void Update()
@@ -109,5 +110,5 @@ public class SurvivorScript : MonoBehaviour
     }
     #endregion
 
-
+    
 }
