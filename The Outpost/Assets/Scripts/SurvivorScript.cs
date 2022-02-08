@@ -5,12 +5,30 @@ using UnityEngine.Tilemaps;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+
 public class SurvivorScript : MonoBehaviour
 {
     public SurvivorDataSO data;
+
+    #region data
+    public int id;
+    public string nameSurv;
+    public int buildingLevel;
+    public int scavangeingLevel;
+    public int strenghtLevel;
+    public int researchLevel;
+    public int leaderLevel;
+    public int enduranceLevel;
+    public int speedLevel;
+    #endregion
+
+    #region Vectors
     Vector2 mousePos;
     Vector3 prevPos;
     Vector3Int mousePosInt;
+    #endregion
+
+    #region Rest
     public Tilemap mainTM;
     Animator animator;
     GameObject currReferenceObject;
@@ -18,12 +36,30 @@ public class SurvivorScript : MonoBehaviour
     [SerializeField] private GameObject circularSliderGO;
     float time;
     int repetari = 0;
+    
+    #endregion
 
+    public SurvivorScript()
+    {
+        
+    }
 
     void Start()
     {
+        mainTM = GameObject.Find("Main").GetComponent<Tilemap>();
+        int index = Random.Range(0, StaticManager.instance.survData.Count);
+        data = StaticManager.instance.survData[index];
+
+        buildingLevel = data.buildingLevel;
+        scavangeingLevel = data.scavangeingLevel;
+        strenghtLevel = data.strenghtLevel;
+        Instantiate(data.prefabWithScript, this.gameObject.transform);
+        id = data.id;
+
+        
+
         animator = GetComponentInChildren<Animator>();
-        Firefighter ff = new Firefighter();
+
     }
     
     void Update()

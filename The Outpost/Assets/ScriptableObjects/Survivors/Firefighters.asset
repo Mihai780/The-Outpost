@@ -10,10 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98dacedeabdcc294dbac7f0b046faa38, type: 3}
-  m_Name: Scavangers
+  m_Name: Firefighters
   m_EditorClassIdentifier: 
+  id: 0
+  nameSurvClass: Firefighter
   buildingLevel: 0
   scavangeingLevel: 2
-  soldierLevel: 0
-  engineerLevel: 0
+  strenghtLevel: 0
+  researchLevel: 0
   leaderLevel: 0
+  enduranceLevel: 0
+  speedLevel: 0
+  prefabWithScript: {fileID: 8560669567904927223, guid: 6c288d4bf9c77774fa532144a7df6b5e,
+    type: 3}

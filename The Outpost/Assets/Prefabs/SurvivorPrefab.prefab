@@ -439,9 +439,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67721fa695dcf144b94d9872c07ff97a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: 65f535387f1f51649ae31032aec77747, type: 2}
+  id: 0
+  nameSurv: 
+  buildingLevel: 0
+  scavangeingLevel: 0
+  strenghtLevel: 0
+  researchLevel: 0
+  leaderLevel: 0
+  enduranceLevel: 0
+  speedLevel: 0
   mainTM: {fileID: 0}
-  circularSlider: {fileID: 2794174891121960802}
+  circularSlider: {fileID: 0}
+  circularSliderGO: {fileID: 0}
 --- !u!50 &4870906475822782906
 Rigidbody2D:
   serializedVersion: 4

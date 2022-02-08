@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Firefighter : MonoBehaviour
+public class FireFighter : MonoBehaviour
 {
-    public Firefighter()
+    static int count=-1;
+
+    public FireFighter()
     {
-        StaticManager.instance.nrFireFighters++;
-        Debug.Log(StaticManager.instance.nrFireFighters);
+        count++;
+        Debug.Log(count);
     }
 
-    ~Firefighter()
+    ~FireFighter()
     {
-        StaticManager.instance.nrFireFighters--;
-        Debug.Log(StaticManager.instance.nrFireFighters);
+        count--;
+        Debug.Log(count);
     }
 }

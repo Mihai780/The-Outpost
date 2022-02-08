@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98dacedeabdcc294dbac7f0b046faa38, type: 3}
   m_Name: Builders
   m_EditorClassIdentifier: 
+  id: 1
+  nameSurvClass: Cop
   buildingLevel: 2
   scavangeingLevel: 0
-  soldierLevel: 0
-  engineerLevel: 0
+  strenghtLevel: 0
+  researchLevel: 0
   leaderLevel: 0
+  enduranceLevel: 0
+  speedLevel: 0
