@@ -96,27 +96,7 @@ public class SurvivorScript : MonoBehaviour
 
     private void OnMouseUp()
     {
-        //movement
-        if(mainTM.GetTile(mousePosInt) == buildingSpawner.instance.base1
-            || mainTM.GetTile(mousePosInt) == buildingSpawner.instance.one
-            || mainTM.GetTile(mousePosInt) == buildingSpawner.instance.three)
-        {
-            //deschide meniurile
-            animator.SetBool("Show", true);
-
-            transform.position = mainTM.GetCellCenterLocal(mousePosInt);
-            this.GetComponent<CircleCollider2D>().enabled = false;
-            currReferenceObject = Physics2D.CircleCast(mousePos, 0.1f, mousePos).collider.gameObject;
-
-            this.GetComponent<CircleCollider2D>().enabled = true;
-        }
-        else
-        {
-            transform.position = prevPos;
-
-            //inchide meniul
-            animator.SetBool("Show", false);
-        }
+       
     }
     #endregion
 
