@@ -36,14 +36,24 @@ public class SurvivorScript : MonoBehaviour
     [SerializeField] private GameObject circularSliderGO;
     float time;
     int repetari = 0;
-    
+
+    static int count = -1;
+
     #endregion
 
+    #region Counstructor / Destructor
     public SurvivorScript()
     {
-        
+        count++;
     }
 
+    ~SurvivorScript()
+    {
+        count--;
+    }
+    #endregion
+
+    #region Unity functions
     void Start()
     {
         mainTM = GameObject.Find("Main").GetComponent<Tilemap>();
@@ -68,6 +78,7 @@ public class SurvivorScript : MonoBehaviour
         mousePosInt = mainTM.WorldToCell(mousePos);
         
     }
+    #endregion
 
     #region Mouse Events
     private void OnMouseDown()
@@ -119,7 +130,7 @@ public class SurvivorScript : MonoBehaviour
         circularSliderGO.SetActive(true);
 
         //set time to work
-        time = currReferenceObject.GetComponent<SmallBuildingGeneration>().timeToWork - 2 * (1+data.scavangeingLevel);
+        time = currReferenceObject.GetComponent<SmallBuilding>().timeToWork - 2 * (1+data.scavangeingLevel);
 
         //start the work
         StartCoroutine(Working(time));

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SmallBuildingGeneration : MonoBehaviour
+public class SmallBuilding : MonoBehaviour
 {
     [SerializeField] private int id;
     [SerializeField] private int foodChance;

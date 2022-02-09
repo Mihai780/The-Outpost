@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BigBuildingGeneration : MonoBehaviour
+public class BigBuilding : MonoBehaviour
 {
     [SerializeField] private int id;
     [SerializeField] private int foodChance;
