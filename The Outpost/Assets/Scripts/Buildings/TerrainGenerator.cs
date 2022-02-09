@@ -18,14 +18,15 @@ public class TerrainGenerator : MonoBehaviour
 
             if(index == 0)
             {
-                currentPoint = currentPoint + new Vector2(1f, 0.5f);
                 Instantiate(selectedPrefab, currentPoint, Quaternion.identity);
-                
+                currentPoint = currentPoint + new Vector2(1f, 0.5f);
+
             }
             else if(index==1)
             {
-                currentPoint = currentPoint + new Vector2(2f, 1f);
+                
                 Instantiate(selectedPrefab, currentPoint, Quaternion.identity);
+                currentPoint = currentPoint + new Vector2(2f, 1f);
 
             }
             

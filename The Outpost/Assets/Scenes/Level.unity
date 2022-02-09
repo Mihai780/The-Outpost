@@ -2837,6 +2837,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 10
   height: 10
+  k: 0
+  prefabs:
+  - {fileID: 1683841651009541298, guid: 292a3507e640d83428deee87ed729016, type: 3}
+  - {fileID: 8341443301639714293, guid: 731cdf3c6aababd409bf2fcb2887e7a4, type: 3}
+  currentPoint: {x: 0, y: 0}
 --- !u!4 &1562236576
 Transform:
   m_ObjectHideFlags: 0
