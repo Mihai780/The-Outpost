@@ -29,7 +29,6 @@ public class SurvivorScript : MonoBehaviour
     #endregion
 
     #region Rest
-    public Tilemap mainTM;
     Animator animator;
     GameObject currReferenceObject;
     [SerializeField] private Image circularSlider;
@@ -56,7 +55,6 @@ public class SurvivorScript : MonoBehaviour
     #region Unity functions
     void Start()
     {
-        mainTM = GameObject.Find("Main").GetComponent<Tilemap>();
         int index = Random.Range(0, StaticManager.instance.survData.Count);
         data = StaticManager.instance.survData[index];
 
@@ -75,7 +73,6 @@ public class SurvivorScript : MonoBehaviour
     void Update()
     {
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePosInt = mainTM.WorldToCell(mousePos);
         
     }
     #endregion

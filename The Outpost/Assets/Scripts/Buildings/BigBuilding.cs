@@ -11,6 +11,7 @@ public class BigBuilding : MonoBehaviour
     [SerializeField] private int survivorChance;
     [SerializeField] private SpriteRenderer spriteRend;
     [HideInInspector] public string buildingName;
+    public float timeToWork;
 
     void Start()
     {
