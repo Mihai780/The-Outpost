@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Rendering;
 public class SmallBuilding : MonoBehaviour
 {
     [SerializeField] private int id;
@@ -10,6 +10,7 @@ public class SmallBuilding : MonoBehaviour
     [SerializeField] private int medicineChance;
     [SerializeField] private int survivorChance;
     [SerializeField] private SpriteRenderer spriteRend;
+    public GameObject light;
     [HideInInspector] public string buildingName;
     public float timeToWork;
 
@@ -22,7 +23,7 @@ public class SmallBuilding : MonoBehaviour
 
     public  void GetInfoOnID()
     {
-        
+        light.SetActive(true);
             for(int i=0;i<BuildingDataLists.instance.smallBuildings.Count;i++)
             {
                 if (id == BuildingDataLists.instance.smallBuildings[i].id)
