@@ -10,23 +10,29 @@ public class TerrainGenerator : MonoBehaviour
     public Transform parentTile1, parentTile3;
     private int x,y;
 
+
     void Start()
     {
         x = 1;
         y = 1;
         Invoke(nameof(Generate),0.5f);
+       
     }
     
     void XCall()
     {
         currentPoint = origin + (x * new Vector2(-1f, 0.5f));
         if (x <= repetariPeAxaX)
+        {
             Invoke(nameof(YCall), 0.1f);
+        }
+     
+            
     }
 
     void YCall()
     {
-        if (!Physics2D.CircleCast(currentPoint + addTile1, 0.1f, currentPoint + addTile1) && !Physics2D.CircleCast(currentPoint, 0.1f, currentPoint))
+        if (!Physics2D.CircleCast(currentPoint + addTile1, 0.1f, Vector2.zero) && !Physics2D.CircleCast(currentPoint, 0.1f, Vector2.zero))
         {
             int index = Random.Range(0, prefabs.Count);
             GameObject selectedPrefab = prefabs[index];
@@ -34,27 +40,21 @@ public class TerrainGenerator : MonoBehaviour
             if (index == 0)
             {
                 Instantiate(selectedPrefab, currentPoint, Quaternion.identity, parentTile1);
-                currentPoint += addTile1;
             }
 
             else if (index == 1)
             {
                 Instantiate(selectedPrefab, currentPoint, Quaternion.identity, parentTile3);
-                currentPoint += addTile1;
             }
 
         }
 
-        else if (!Physics2D.CircleCast(currentPoint, 0.1f, currentPoint) && Physics2D.CircleCast(currentPoint + addTile1, 0.1f, currentPoint + addTile1))
+        else if (!Physics2D.CircleCast(currentPoint, 0.1f, Vector2.zero) && Physics2D.CircleCast(currentPoint + addTile1, 0.1f, Vector2.zero))
         {
             Instantiate(prefabs[0], currentPoint, Quaternion.identity, parentTile1);
-            currentPoint += addTile1;
         }
 
-        else
-        {
-            currentPoint += addTile1;
-        }
+        currentPoint += addTile1;
 
         y++;
         if (y <= urcariPeAxaY)
@@ -75,4 +75,5 @@ public class TerrainGenerator : MonoBehaviour
 
         Invoke(nameof(XCall),0.5f);
     }
+
 }
