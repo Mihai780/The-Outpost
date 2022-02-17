@@ -6,7 +6,7 @@ public class TerrainGenerator : MonoBehaviour
 {
     public int repetariPeAxaX, urcariPeAxaY;
     public List<GameObject> prefabs;
-    public Vector2 origin,currentPoint,addTile1,addTile3;
+    public Vector2 origin,currentPoint,addTile1;
     public Transform parentTile1, parentTile3;
     private int x,y;
 
@@ -21,18 +21,28 @@ public class TerrainGenerator : MonoBehaviour
     
     void XCall()
     {
-        currentPoint = origin + (x * new Vector2(-1f, 0.5f));
+        currentPoint = origin + (x * new Vector2(-0.5f, 0.25f));
         if (x <= repetariPeAxaX)
         {
             Invoke(nameof(YCall), 0.1f);
         }
-     
+        else
+        {
+            SpawnBase();
+        }
             
+    }
+
+    void SpawnBase()
+    {
+        int baseIndex = Random.Range(0, parentTile1.childCount);
+        GameObject baseBegin = parentTile1.GetChild(baseIndex).gameObject;
+        
     }
 
     void YCall()
     {
-        if (!Physics2D.CircleCast(currentPoint + addTile1, 0.1f, Vector2.zero) && !Physics2D.CircleCast(currentPoint, 0.1f, Vector2.zero))
+        if (!Physics2D.CircleCast(currentPoint + addTile1, 0.05f, Vector2.zero) && !Physics2D.CircleCast(currentPoint, 0.05f, Vector2.zero))
         {
             int index = Random.Range(0, prefabs.Count);
             GameObject selectedPrefab = prefabs[index];
@@ -49,7 +59,7 @@ public class TerrainGenerator : MonoBehaviour
 
         }
 
-        else if (!Physics2D.CircleCast(currentPoint, 0.1f, Vector2.zero) && Physics2D.CircleCast(currentPoint + addTile1, 0.1f, Vector2.zero))
+        else if (!Physics2D.CircleCast(currentPoint, 0.05f, Vector2.zero) && Physics2D.CircleCast(currentPoint + addTile1, 0.05f, Vector2.zero))
         {
             Instantiate(prefabs[0], currentPoint, Quaternion.identity, parentTile1);
         }
